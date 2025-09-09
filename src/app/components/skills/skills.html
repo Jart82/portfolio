@@ -1,0 +1,16 @@
+<section class="skills">
+  <div class="container">
+    <h2>My Skills</h2>
+    <div class="skills-grid">
+      @for (skill of skills; track skill.name) {
+        <div class="skill-item">
+          <h3>{{ skill.name }}</h3>
+          <div class="skill-bar">
+            <div class="skill-level" [style.width.%]="skill.level"></div>
+          </div>
+          <span class="skill-percent">{{ skill.level }}%</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

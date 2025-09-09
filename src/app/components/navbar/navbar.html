@@ -1,0 +1,29 @@
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="logo">Portfolio</div>
+
+  <ul 
+    class="nav-links" 
+    [class.active]="isMenuOpen"
+    #navMenu
+    role="menu"
+  >
+    <li role="none"><a href="#home" (click)="scrollToSection('home')" role="menuitem">Home</a></li>
+    <li role="none"><a href="#about" (click)="scrollToSection('about')" role="menuitem">About</a></li>
+    <li role="none"><a href="#skills" (click)="scrollToSection('skills')" role="menuitem">Skills</a></li>
+    <li role="none"><a href="#projects" (click)="scrollToSection('projects')" role="menuitem">Projects</a></li>
+    <li role="none"><a href="#contact" (click)="scrollToSection('contact')" role="menuitem">Contact</a></li>
+  </ul>
+
+  <button 
+    class="menu-toggle" 
+    (click)="toggleMenu()" 
+    [attr.aria-expanded]="isMenuOpen" 
+    aria-controls="navMenu"
+    aria-label="Toggle navigation menu"
+    type="button"
+  >
+    <span class="bar" [class.active]="isMenuOpen"></span>
+    <span class="bar" [class.active]="isMenuOpen"></span>
+    <span class="bar" [class.active]="isMenuOpen"></span>
+  </button>
+</nav>

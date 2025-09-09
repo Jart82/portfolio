@@ -1,0 +1,96 @@
+<section class="contact">
+  <div class="container">
+    <h2>Get In Touch</h2>
+    <p>Have a project in mind? Let's talk!</p>
+
+    <form
+      #contactForm="ngForm"
+      (ngSubmit)="onSubmit()"
+      novalidate
+      class="contact-form"
+      aria-labelledby="contact-heading"
+    >
+      <!-- Name Field -->
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          ngModel
+          required
+          #nameCtrl="ngModel"
+          placeholder="Name"
+          aria-describedby="name-error"
+        />
+        @if (nameCtrl.invalid && nameCtrl.touched) {
+          <div id="name-error" class="error" role="alert">
+            Name is required
+          </div>
+        }
+      </div>
+
+      <!-- Email Field -->
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          ngModel
+          required
+          email
+          #emailCtrl="ngModel"
+          placeholder="user@example.com"
+          aria-describedby="email-error"
+        />
+        @if (emailCtrl.invalid && emailCtrl.touched) {
+          <div id="email-error" class="error" role="alert">
+            @if (emailCtrl.errors?.['required']) {
+              Email is required
+            } @else if (emailCtrl.errors?.['email']) {
+              Please enter a valid email
+            }
+          </div>
+        }
+      </div>
+
+      <!-- Message Field -->
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea
+          id="message"
+          name="message"
+          ngModel
+          required
+          #messageCtrl="ngModel"
+          rows="5"
+          placeholder="Tell me about your project..."
+          aria-describedby="message-error"
+        ></textarea>
+        @if (messageCtrl.invalid && messageCtrl.touched) {
+          <div id="message-error" class="error" role="alert">
+            Message is required
+          </div>
+        }
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        [disabled]="contactForm.form.invalid"
+        class="btn"
+        [class.loading]="contactForm.submitted && contactForm.form.invalid"
+      >
+        Send Message
+      </button>
+
+      <!-- Success Message -->
+      @if (successMessage) {
+        <div class="success" role="status">
+          {{ successMessage }}
+        </div>
+      }
+    </form>
+  </div>
+</section>
