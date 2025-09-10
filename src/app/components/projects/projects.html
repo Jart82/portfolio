@@ -1,27 +1,79 @@
-<section class="projects">
+<section class="projects" id="projects">
   <div class="container">
     <h2>Featured Projects</h2>
+    <p class="section-subtitle">
+      Here are some of my recent technical projects — built with modern stacks and deployed with DevOps tools.
+    </p>
+
     <div class="projects-grid">
-      @for (project of projects; track project.title; let i = $index) {
-        <div
-          #projectCard
-          class="project-card"
-          (mouseenter)="onCardHover(i, true)"
-          (mouseleave)="onCardHover(i, false)"
-        >
-          <img [src]="project.image" [alt]="project.title" loading="lazy" />
-          <div class="project-content">
-            <h3>{{ project.title }}</h3>
-            <p>{{ project.description }}</p>
-            <div class="project-links">
-              <a [href]="project.demo" target="_blank" class="btn">Live Demo</a>
-              <a [href]="project.code" target="_blank" class="btn secondary">Source Code</a>
-            </div>
+      <!-- Project 1: Microblog -->
+      <div class="project-card" [@slideIn]="i" *ngFor="let project of projects; let i = index">
+        <div class="project-image-wrapper">
+          <img
+            [src]="project.image"
+            [alt]="project.title + ' screenshot'"
+            class="project-image"
+            loading="lazy"
+          />
+          <div class="project-overlay">
+            <a
+              *ngIf="project.github"
+              [href]="project.github"
+              target="_blank"
+              class="overlay-btn"
+              aria-label="View code on GitHub"
+            >
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a
+              *ngIf="project.live && project.live !== '#'"
+              [href]="project.live"
+              target="_blank"
+              class="overlay-btn live-btn"
+              aria-label="View live demo"
+            >
+              <i class="fas fa-external-link-alt"></i> Live
+            </a>
           </div>
         </div>
-      } @empty {
-        <p>No projects available.</p>
-      }
+
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+
+          <div class="project-tech">
+            <span class="tech-label">Tech Stack:</span>
+            <div class="tech-badges">
+              <span
+                *ngFor="let tech of project.tech"
+                class="tech-badge"
+                [attr.title]="'Built with ' + tech"
+              >
+                {{ tech }}
+              </span>
+            </div>
+          </div>
+
+          <div class="project-links">
+            <a
+              *ngIf="project.github"
+              [href]="project.github"
+              target="_blank"
+              class="btn github-btn"
+            >
+              <i class="fab fa-github"></i> View Code
+            </a>
+            <a
+              *ngIf="project.live && project.live !== '#'"
+              [href]="project.live"
+              target="_blank"
+              class="btn live-demo-btn"
+            >
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

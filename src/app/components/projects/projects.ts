@@ -10,28 +10,23 @@ import { CommonModule } from '@angular/common';
 })
 export class Projects implements AfterViewInit {
   projects = [
-    {
-      title: 'E-Commerce Dashboard',
-      description: 'Admin dashboard built with Angular Material and Firebase.',
-      image: 'https://via.placeholder.com/400x250/4a89dc/ffffff?text=Project+1',
-      demo: '#',
-      code: '#'
-    },
-    {
-      title: 'Task Manager App',
-      description: 'Drag-and-drop task manager with real-time sync.',
-      image: 'https://via.placeholder.com/400x250/5cb85c/ffffff?text=Project+2',
-      demo: '#',
-      code: '#'
-    },
-    {
-      title: 'Weather App',
-      description: 'Real-time weather app using OpenWeather API.',
-      image: 'https://via.placeholder.com/400x250/f0ad4e/ffffff?text=Project+3',
-      demo: '#',
-      code: '#'
-    }
-  ];
+  {
+    title: 'Microblog Platform',
+    description: 'A full-stack blog application with user authentication, real-time following, and AI-powered article translation using Elasticsearch. Containerized with Docker and deployed on Azure.',
+    image: 'https://via.placeholder.com/400x250/3b82f6/ffffff?text=Microblog',
+    tech: ['Angular', 'Flask', 'PostgreSQL', 'Elasticsearch', 'Docker', 'Azure', 'Redis'],
+    github: 'https://github.com/Jart82/microblog',
+    live: '#' // Add if you deploy it
+  },
+  {
+    title: 'Primvilla Property Platform',
+    description: 'A responsive real estate web app allowing users to browse property listings and contact realtors. Built with Flask backend and vanilla JS frontend.',
+    image: 'https://via.placeholder.com/400x250/10b981/ffffff?text=Primvilla',
+    tech: ['Flask', 'JavaScript', 'HTML/CSS', 'SQL'],
+    github: 'https://github.com/Jart82/PRIMEVILLA.git',
+    live: '#'
+  }
+];
 
   // ✅ Get all project cards for animation or intersection observer
   projectCards = viewChildren<ElementRef<HTMLDivElement>>('projectCard');
