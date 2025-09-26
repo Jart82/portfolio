@@ -23,8 +23,8 @@ export class Projects {
       description: 'A modern, responsive web application for designing and generating custom ID cards. Built with Angular, Material Design, and powerful client-side rendering tools.',
       image: '../assets/logo-3.png',
       tech: ['Angular', 'Typescript', 'HTML/CSS', 'Angular Material', 'html2canvas', 'angularx-qrcode'],
-      github: 'https://github.com/Jart82/PRIMEVILLA',
-      live: null
+      github: 'https://github.com/Jart82/id-editor',
+      live: 'https://id-editor-plum.vercel.app/'
     },
     {
       title: 'Microblog Platform',
