@@ -1,0 +1,19 @@
+.footer {
+  background: #333;
+  color: white;
+  padding: 2rem 5%;
+  text-align: center;
+}
+.footer .social-links {
+  margin-top: 1rem;
+}
+.footer .social-links a {
+  color: #ddd;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+.footer .social-links a:hover {
+  color: #007bff;
+}
+
+/*# sourceMappingURL=footer.css.map */

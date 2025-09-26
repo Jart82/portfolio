@@ -13,6 +13,7 @@ import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 export class Contact implements AfterViewInit {
   contactForm = viewChild.required(NgForm);
   successMessage = '';
+  errorMessage= '';
   isSubmitting = false;
   
 
@@ -44,7 +45,7 @@ export class Contact implements AfterViewInit {
       );
 
       console.log('SUCCESS!', response.status, response.text);
-      this.successMessage = '✅ Message sent successfully!';
+      this.successMessage = 'Message sent successfully!';
       form.resetForm();
 
       setTimeout(() => {
@@ -53,7 +54,7 @@ export class Contact implements AfterViewInit {
 
     } catch (error) {
       console.error('FAILED...', error);
-      this.successMessage = '❌ Failed to send message. Please try again.';
+      this.errorMessage = '❌ Failed to send message. Please try again.';
     } finally {
       this.isSubmitting = false;
     }

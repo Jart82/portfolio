@@ -1,0 +1,11 @@
+.about{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    background-color: rgb(209, 223, 223);
+    
+    @media (max-width: 768px) {
+        padding: 60px 20px;
+        width: 100%;
+    }
+}

@@ -3,11 +3,13 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
-  
+  width: 100%; /* Changed from fixed 500px */
+  max-width: 500px; /* Optional: maintains max width on larger screens */
 
   .skill-item {
     h3 {
       margin-bottom: 0.5rem;
+      font-size: 1.1rem;
     }
 
     .skill-bar {
