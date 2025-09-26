@@ -11,9 +11,25 @@ import { CommonModule } from '@angular/common';
 export class Projects {
   projects = [
     {
+      title: 'Todo List App',
+      description: 'A clean, responsive, and intuitive todo list application built with modern web technologies. Manage your tasks efficiently with features like task creation, completion tracking, filtering, and local storage persistence.',
+      image: '../assets/logo-3.png',
+      tech: ['Angular', 'TypeScript', 'HTML/CSS'],
+      github: 'https://github.com/Jart82/todolist-app',
+      live: 'https://todolist-app-sigma-flax.vercel.app/'
+    },
+    {
+      title: 'ID Card Editor',
+      description: 'A modern, responsive web application for designing and generating custom ID cards. Built with Angular, Material Design, and powerful client-side rendering tools.',
+      image: '../assets/logo-3.png',
+      tech: ['Angular', 'Typescript', 'HTML/CSS', 'Angular Material', 'html2canvas', 'angularx-qrcode'],
+      github: 'https://github.com/Jart82/PRIMEVILLA',
+      live: null
+    },
+    {
       title: 'Microblog Platform',
       description: 'A full-stack blog application with user authentication, real-time following, and AI-powered article translation using Elasticsearch. Containerized with Docker and deployed on Azure.',
-      image: '../assets/logo.png',
+      image: '../assets/logo-3.png',
       tech: ['Flask', 'PostgreSQL', 'Elasticsearch', 'Docker', 'Azure', 'Redis'],
       github: 'https://github.com/Jart82/microblog',
       live: null // 'or a real URL if deployed'
@@ -21,18 +37,10 @@ export class Projects {
     {
       title: 'Primvilla Property Platform',
       description: 'A responsive real estate web app allowing users to browse property listings and contact realtors. Built with Flask backend and vanilla JS frontend.',
-      image: '../assets/logo.png',
+      image: '../assets/logo-3.png',
       tech: ['Flask', 'JavaScript', 'HTML/CSS', 'SQL'],
       github: 'https://github.com/Jart82/PRIMEVILLA',
       live: null
-    },
-    {
-      title: 'Todo List App',
-      description: 'A clean, responsive, and intuitive todo list application built with modern web technologies. Manage your tasks efficiently with features like task creation, completion tracking, filtering, and local storage persistence.',
-      image: '../assets/logo.png',
-      tech: ['Angular', 'TypeScript', 'HTML/CSS'],
-      github: 'https://github.com/Jart82/todolist-app',
-      live: 'https://todolist-app-sigma-flax.vercel.app/'
     }
   ];
 
