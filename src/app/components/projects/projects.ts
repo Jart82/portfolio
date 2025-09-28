@@ -11,6 +11,14 @@ import { CommonModule } from '@angular/common';
 export class Projects {
   projects = [
     {
+      title: 'User Management Core',
+      description: 'A responsive admin dashboard built with Angular 17 and vanilla CSS that enables teams to efficiently manage user accounts. Features include real-time search, dynamic filtering by role and join date, pagination, CSV export, and CRUD operations—all backed by a reactive in-memory data service. Designed with a clean dark-theme UI and fully responsive layout, this project demonstrates modern Angular best practices using standalone components and reactive state management—without relying on external UI libraries.',
+      image: '../assets/logo-3.png',
+      tech: ['Angular', 'TypeScript', 'RxJS', 'HTML/CSS'],
+      github: 'https://github.com/Jart82/usermanagecore.git',
+      live: 'https://usermanagecore.vercel.app/'
+    },
+    {
       title: 'Todo List App',
       description: 'A clean, responsive, and intuitive todo list application built with modern web technologies. Manage your tasks efficiently with features like task creation, completion tracking, filtering, and local storage persistence.',
       image: '../assets/logo-3.png',
