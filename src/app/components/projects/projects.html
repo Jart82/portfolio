@@ -6,8 +6,11 @@
     </p>
 
     <div class="projects-grid">
-      <!-- Project 1: Microblog -->
-      <div class="project-card" [@slideIn]="i" *ngFor="let project of projects; let i = index">
+      <div
+        class="project-card"
+        [@slideIn]="i"
+        *ngFor="let project of projects; let i = index"
+      >
         <div class="project-image-wrapper">
           <img
             [src]="project.image"
@@ -39,7 +42,23 @@
 
         <div class="project-content">
           <h3 class="project-title">{{ project.title }}</h3>
-          <p class="project-description">{{ project.description }}</p>
+
+          <p
+            class="project-description"
+            [class.expanded]="project.showFullDescription"
+          >
+            {{ project.description }}
+          </p>
+
+          <!-- Show "Show more/less" only if description is long -->
+          <button
+            *ngIf="isLongDescription(project.description)"
+            (click)="toggleDescription(project)"
+            class="show-more-btn"
+            [attr.aria-expanded]="project.showFullDescription"
+          >
+            {{ project.showFullDescription ? 'Show less' : 'Show more' }}
+          </button>
 
           <div class="project-tech">
             <span class="tech-label">Tech Stack:</span>

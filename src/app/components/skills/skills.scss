@@ -4,7 +4,16 @@
   gap: 2rem;
   margin-top: 2rem;
   width: 100%; /* Changed from fixed 500px */
-  max-width: 500px; /* Optional: maintains max width on larger screens */
+  /* Allow the skills grid to expand on wide screens but keep comfortable reading width */
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Desktop: increase min column width so items are more spaced on large screens */
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+  }
 
   .skill-item {
     h3 {
